@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    android:background="@color/color_black"
+    >
+
+    <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="20dp"
+            android:src="@mipmap/chacha"
+            android:id="@+id/iv_close"/>
+
+        <ImageView
+            android:id="@+id/tv_logo"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="80dp"
+            android:gravity="center"
+            android:src="@mipmap/logo"
+            />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/met_mobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_logo"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="60dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/icon_mobile"
+            android:drawablePadding="10dp"
+            android:hint="您的手机号"
+            android:inputType="phone"
+            android:textColorHint="@color/color_white"
+            app:met_baseColor="@color/color_white"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/color_black"
+            app:met_underlineColor="@color/color_black"
+            />
+
+        <View
+            android:id="@+id/v"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/met_mobile"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@color/color_white"/>
+
+
+
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="10dp"
+            android:background="@null"
+            android:drawableLeft="@mipmap/icon_password"
+            android:drawablePadding="10dp"
+            android:hint="请输入密码"
+            android:textColorHint="@color/color_white"
+            app:met_baseColor="@color/color_white"
+            app:met_floatingLabel="normal"
+            android:inputType="textPassword"
+            app:met_primaryColor="@color/color_black"
+            app:met_underlineColor="@color/color_black"
+            />
+
+        <View
+            android:id="@+id/v3"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_below="@+id/et_password"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:background="@color/color_white"/>
+
+
+
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/v3"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/shape_btn"
+            android:text="登录"
+            android:textColor="@color/color_white"
+            android:textSize="18sp"/>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textColor="@color/color_white"
+            android:layout_alignRight="@+id/btn_login"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:id="@+id/tv_register"/>
+
+        <TextView
+            android:id="@+id/tv_getback_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/btn_login"
+            android:layout_below="@+id/btn_login"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="忘记密码?"
+            android:textColor="@color/color_white"/>
+
+    </RelativeLayout>
+</ScrollView>

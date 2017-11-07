@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.1"
+    defaultConfig {
+        applicationId "live.cnaidai.com.ccyb"
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 11
+        versionName "1.1.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk {
+            //选择要添加的对应cpu类型的.so库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "ef37cda854a337eae4d179a5", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
+
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+
+
+    buildTypes {
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "String", "SERVER_PATH", "\"http://pc.congcongyb.com/Ticket/\""
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug{
+            //显示log
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+            buildConfigField "String", "SERVER_PATH", "\"http://pc.congcongyb.com/Ticket/\""
+//            buildConfigField "String", "SERVER_PATH", "\"http://muyixi315.6655.la/Ticket/\""
+//            buildConfigField "String", "SERVER_PATH", "\"http://139.196.112.56:8038/Ticket/\""
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:24.2.1'
+    testCompile 'junit:junit:4.12'
+    //网络请求库
+    compile 'com.zhy:okhttputils:2.0.2'
+    compile 'com.google.code.gson:gson:2.7'
+    //View注入框架
+    compile 'com.jakewharton:butterknife:7.0.1'
+    compile 'com.orhanobut:logger:1.3'
+    //Rx系列
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'io.reactivex:rxjava:1.1.5'
+    compile 'com.android.support:design:24.2.1'
+    compile 'com.github.clans:fab:1.6.4'
+    //图片加载
+    compile 'com.facebook.fresco:fresco:0.8.0+'
+    compile 'com.rengwuxian.materialedittext:library:2.1.4'
+    //权限管理第三方库
+    compile 'com.lovedise:permissiongen:0.0.6'
+    compile 'com.android.support:cardview-v7:24.2.1'
+    compile files('libs/alipaySdk-20160825.jar')
+    compile files('libs/libammsdk.jar')
+    compile files('libs/open_sdk_r5778_lite.jar')
+    compile files('libs/BaiduLBS_Android.jar')
+
+    //极光推送
+    compile 'cn.jiguang.sdk:jpush:3.0.0'  // 此处以JPush 3.0.0 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.0.0'  // 此处以JCore 1.0.0 版本为例。
+
+
+    compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.0.8@aar'
+
+
+    compile 'org.apache.httpcomponents:httpcore:4.4.1'
+    compile 'org.apache.httpcomponents:httpclient:4.5'
+
+}

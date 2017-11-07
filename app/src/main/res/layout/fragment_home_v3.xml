@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f7f7f7"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/color_white">
+
+                <RelativeLayout
+                    android:id="@+id/rl_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@color/color_white">
+
+                    <live.cnaidai.com.ccyb.view.ImageCycleView
+                        android:id="@+id/icv"
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"/>
+
+
+                    <TextView
+                        android:id="@+id/tv_city"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:padding="15dp"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <!--<View-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="0.5dp"-->
+                <!--android:background="@color/color_line_divide"/>-->
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:text="热门推荐"
+                    android:textSize="12sp"
+                    />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/rv_hot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none"
+                    android:background="@color/color_white"
+                    />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/color_bg_gray"/>
+            </LinearLayout>
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+
+        <com.flyco.tablayout.SlidingTabLayout
+            android:id="@+id/tab"
+            android:layout_width="match_parent"
+            android:layout_height="36dp"
+            app:tl_indicator_color="@color/red"
+            tl:tl_tab_space_equal="true"
+            tl:tl_textSelectColor="@color/color_text_red"
+            tl:tl_textUnselectColor="@color/color_black"
+            android:background="@color/color_white"
+            app:tl_underline_color="@color/color_line_divide"
+            app:tl_underline_height="1px"
+            tl:tl_textsize="14sp"
+            >
+
+        </com.flyco.tablayout.SlidingTabLayout>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_FindFragment_pager"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        />
+
+
+</android.support.design.widget.CoordinatorLayout>

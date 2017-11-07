@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:fab="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+    <FrameLayout
+        android:id="@+id/fl_contnet"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rg_tab"/>
+
+
+    <TextView
+        android:id="@+id/tv_cloud"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffff"
+        android:visibility="gone"/>
+
+    <com.github.clans.fab.FloatingActionMenu
+        android:id="@+id/menu_more"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rg_tab"
+        android:layout_margin="10dp"
+        android:layout_alignParentRight="true"
+        app:menu_icon="@mipmap/icon_more_v2"
+        fab:menu_showShadow="true"
+        app:menu_colorNormal="#ff4d4d"
+        app:menu_colorRipple="#ff4d4d"
+        app:menu_colorPressed="#ff4d4d"
+        >
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/item_yrgy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/beiyue"
+            app:fab_size="mini"
+            app:fab_label="想被人约"
+            app:fab_colorNormal="@color/color_white"
+            app:menu_colorPressed="@color/color_white"
+            />
+
+        <com.github.clans.fab.FloatingActionButton
+            android:id="@+id/item_xbry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/yueren"
+            app:fab_size="mini"
+            app:fab_label="约人观影"
+            app:fab_colorNormal="@color/color_white"
+            app:menu_colorPressed="@color/color_white"
+            />
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+    <RadioGroup
+        android:id="@+id/rg_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/color_white"
+        android:checkedButton="@+id/rb_home"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/home_tab"
+            android:drawableTop="@drawable/selector_tab_home"
+            android:text="@string/tab_home"/>
+
+
+        <RadioButton
+            android:id="@+id/rb_market"
+            style="@style/home_tab"
+            android:checked="false"
+            android:drawableTop="@drawable/selector_tab_market"
+            android:text="@string/tab_market"/>
+
+
+        <RadioButton
+            android:id="@+id/rb_mine"
+            style="@style/home_tab"
+            android:checked="false"
+            android:drawableTop="@drawable/selector_tab_mine"
+            android:text="@string/tab_mine"/>
+
+    </RadioGroup>
+
+
+</RelativeLayout>
